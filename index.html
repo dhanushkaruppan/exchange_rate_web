@@ -1,108 +1,183 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exchange Rate Info</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="incss.css">
-    <link rel="shortcut icon" href="images/g16.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Monoton&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exchange Rate Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/g16.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Monoton&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Chakra Petch", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  </head>
-  <body>
-    <div class="nav">
-        <div class="brand d-flex align-items-center">
-            <!--<img src="g16.png" class="ms-4 logo" width="70px">-->
-            <div class="bname ms-5 fs-3 fw-medium">Exchange Rate</div>
-        </div>
+    .nav {
+      background-color: rgb(247, 99, 99);
+      height: 80px;
+    }
+
+    .bname {
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .banner {
+      background: linear-gradient(to right, rgb(247, 143, 143), rgb(255, 222, 222), rgb(246, 189, 189), rgb(245, 130, 130));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .h2 {
+      font-family: "Saira Stencil One", sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .links {
+      width: 30px;
+      user-select: none;
+    }
+
+    .b1 {
+      top: 25%;
+      right: 20%;
+    }
+
+    .b2 {
+      top: 5%;
+      left: 10%;
+      width: 80px;
+    }
+
+    .b3 {
+      bottom: -20%;
+      right: 50%;
+    }
+
+    .b4 {
+      bottom: 10%;
+      right: 10%;
+    }
+
+    .b1, .b2, .b3, .b4 {
+      position: absolute;
+      opacity: 0.7;
+      z-index: -1;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .b1 { animation-duration: 12s; animation-delay: 0s; }
+    .b2 { animation-duration: 14s; animation-delay: 2s; }
+    .b3 { animation-duration: 11s; animation-delay: 1s; }
+    .b4 { animation-duration: 13s; animation-delay: 3s; }
+
+    @keyframes float {
+      0%   { transform: translate(0, 0) scale(1); }
+      25%  { transform: translate(20px, -15px) scale(1.05); }
+      50%  { transform: translate(-10px, 20px) scale(1); }
+      75%  { transform: translate(15px, 10px) scale(0.95); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="brand d-flex align-items-center">
+      <div class="bname ms-5 fs-3 fw-medium">Exchange Rate</div>
     </div>
-    <div class="container-fluid banner position-relative z-0 overflow-hidden">
-        <img src="element/web/element/path10.png" class="position-absolute b1 z-n1">
-        <img src="element/web/element/path10.png" class="position-absolute b2 z-n1">
-        <img src="element/web/element/web/element/path12.png" class="position-absolute b3 z-n1">
-        <img src="element/path98.png" class="position-absolute b4 z-n1">
-        <div class="user-select-none row w-100  py-5">
-            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
-                <img src="g55.png" class="ms-5 w-75 user-select-none">
-            </div>
-            <div class="col-12 col-lg-6 mt-5 d-flex flex-column align-items-center justify-content-center">
-                <div class="col-10">
-                    <p class=" h2 col-12 ">Currency Exchange Rate calculator - Offline</p>
-                    <p class="fs-6 col-10">It is created to over come the network service availability problems fix in different countries to monitor Exchange Rate. </p>
-            
-                </div>
-                
-            </div>
+  </div>
+
+  <div class="container-fluid banner py-5">
+    <img src="element/web/element/path10.png" class="b1">
+    <img src="element/web/element/path10.png" class="b2">
+    <img src="element/web/element/web/element/path12.png" class="b3">
+    <img src="element/path98.png" class="b4">
+
+    <div class="row w-100 py-5">
+      <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+        <img src="g55.png" class="ms-5 w-75 user-select-none">
+      </div>
+      <div class="col-12 col-lg-6 mt-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="col-10">
+          <p class="h2 col-12">Currency Exchange Rate calculator - Offline</p>
+          <p class="fs-6 col-10">It is created to overcome the network service availability problems fixed in different countries to monitor Exchange Rate.</p>
         </div>
+      </div>
     </div>
-    <div class="container-fluid mt-5 d-flex justify-content-center my-5 py-5 user-select-none">
-        <div class="row col-12 ">
+  </div>
 
-            <div class="col-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
-                <div class="card col-8 col-md-5 col-lg-4 col-xl-8 my-5 position-relative user-select-none">
-                    <img src="images/Arunguru GP.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
-                    <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
-                        <div class="col-9 pb-4">
-                            <p class="fs-4 fw-bolder mb-1">Arun Guru G P</p>
-                            <p class="fs-6 mb-1">Software and web developer</p>
-                            <p class="fs-6 fw-bolder">[Team lead]</p>
-                            <a href="https://www.linkedin.com/in/arunguru00/" target="_blank">
-                                <img src="images/linkedin.png" class="links me-3 user-select-none">
-                            </a>
-                            <a href="https://github.com/ARuNGuRu00" target="_blank">
-                                <img src="images/github-sign.png" class="links">
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid mt-5 d-flex justify-content-center my-5 py-5">
+    <div class="row col-12">
 
-            <div class="col-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
-                <div class="card col-8 col-md-5 col-lg-4 col-xl-8 my-5 position-relative user-select-none">
-                    <img src="images/Godwin Paul.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
-                    <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
-                        <div class="col-9 pb-4">
-                            <p class="fs-4 fw-bolder mb-2">Godwin Paul M</p>
-                            <p class="fs-6">Software designer</p>
-                            <a href="https://www.linkedin.com/in/godwin-paul-m-6408ba267/" target="_blank">
-                                <img src="images/linkedin.png" class="links me-3">
-                            </a>
-                            <a href="https://github.com/godwinpaul01" target="_blank">
-                                <img src="images/github-sign.png" class="links">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <!-- Arun -->
+      <div class="col-xl-4 d-flex justify-content-center align-items-center">
+        <div class="card col-8 my-5 position-relative">
+          <img src="images/Arunguru GP.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
+          <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
+            <div class="col-9 pb-4">
+              <p class="fs-4 fw-bolder mb-1">Arun Guru G P</p>
+              <p class="fs-6 mb-1">Software and web developer</p>
+              <p class="fs-6 fw-bolder">[Team lead]</p>
+              <a href="https://www.linkedin.com/in/arunguru00/" target="_blank">
+                <img src="images/linkedin.png" class="links me-3">
+              </a>
+              <a href="https://github.com/ARuNGuRu00" target="_blank">
+                <img src="images/github-sign.png" class="links">
+              </a>
             </div>
-            
-            
-            <div class="col-12 col-md-12 col-lg-12 col-xl-4 d-flex justify-content-center align-items-center">
-                <div class="card col-8 col-md-5 col-lg-4 col-xl-8 my-5 position-relative user-select-none">
-                    <img src="images/sundar.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
-                    <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
-                        <div class="col-9 pb-4">
-                            <p class="fs-5 fw-bolder mb-2">Sundara Ganesan S</p>
-                            <p class="fs-6">Data Analyst</p>
-                            <a href="https://www.linkedin.com/in/sundara-ganesan-a80b80273/" target="_blank">
-                                <img src="images/linkedin.png" class="links me-3">
-                            </a>
-                            <a href="https://github.com/sundar200493" target="_blank">
-                                <img src="images/github-sign.png" class="links">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
+      </div>
+
+      <!-- Godwin -->
+      <div class="col-xl-4 d-flex justify-content-center align-items-center">
+        <div class="card col-8 my-5 position-relative">
+          <img src="images/Godwin Paul.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
+          <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
+            <div class="col-9 pb-4">
+              <p class="fs-4 fw-bolder mb-2">Godwin Paul M</p>
+              <p class="fs-6">Software designer</p>
+              <a href="https://www.linkedin.com/in/godwin-paul-m-6408ba267/" target="_blank">
+                <img src="images/linkedin.png" class="links me-3">
+              </a>
+              <a href="https://github.com/godwinpaul01" target="_blank">
+                <img src="images/github-sign.png" class="links">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sundar -->
+      <div class="col-xl-4 d-flex justify-content-center align-items-center">
+        <div class="card col-8 my-5 position-relative">
+          <img src="images/sundar.jpg" class="w-50 rounded-circle position-absolute top-0 start-0 translate-middle">
+          <div class="col-12 me-5 mt-4 w-100 d-flex justify-content-end border-bottom">
+            <div class="col-9 pb-4">
+              <p class="fs-5 fw-bolder mb-2">Sundara Ganesan S</p>
+              <p class="fs-6">Data Analyst</p>
+              <a href="https://www.linkedin.com/in/sundara-ganesan-a80b80273/" target="_blank">
+                <img src="images/linkedin.png" class="links me-3">
+              </a>
+              <a href="https://github.com/sundar200493" target="_blank">
+                <img src="images/github-sign.png" class="links">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-       
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
